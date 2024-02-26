@@ -30,25 +30,56 @@
   <div id="repo-container"></div>
 
   <script>
-    fetch('https://api.github.com/users/chandrima0503/repos')
-      .then(response => response.json())
-      .then(data => {
-        const repoContainer = document.getElementById('repo-container');
+    // Function to fetch GitHub repositories
+    async function fetchRepos(url) {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
 
-        data.forEach(repo => {
-          const repoCard = document.createElement('div');
-          repoCard.className = 'repo-card';
+        if (response.ok) {
+          return data;
+        } else {
+          throw new Error(`Error fetching GitHub repositories: ${response.statusText}`);
+        }
+      } catch (error) {
+        console.error('Error fetching GitHub repositories', error);
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = 'Error fetching GitHub repositories. Please try again later.';
+        document.body.appendChild(errorMessage);
+      }
+    }
 
-          const repoLink = document.createElement('a');
-          repoLink.href = repo.html_url;
-          repoLink.target = '_blank';
-          repoLink.textContent = repo.name;
+    // Function to display repositories on the web page
+    function displayRepos(repos) {
+      const repoContainer = document.getElementById('repo-container');
 
-          repoCard.appendChild(repoLink);
-          repoContainer.appendChild(repoCard);
-        });
-      })
-      .catch(error => console.error('Error fetching GitHub repositories', error));
+      repos.forEach(repo => {
+        const repoCard = document.createElement('div');
+        repoCard.className = 'repo-card';
+
+        const repoLink = document.createElement('a');
+        repoLink.href = repo.html_url;
+        repoLink.textContent = repo.name;
+
+        repoCard.appendChild(repoLink);
+        repoContainer.appendChild(repoCard);
+      });
+    }
+
+    // Fetch and display repositories
+    fetchRepos('https://api.github.com/users/chandrima0503/repos?per_page=100')
+      .then(repos => {
+        displayRepos(repos);
+
+        // Check if there are more repositories to fetch
+        if (repos.length === 100) {
+          const lastRepo = repos[repos.length - 1];
+          fetchRepos(lastRepo.next_page_url)
+            .then(nextRepos => {
+              displayRepos(nextRepos);
+            });
+        }
+      });
   </script>
 </body>
 </html>
