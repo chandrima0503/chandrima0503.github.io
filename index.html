@@ -1,7 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your GitHub Portfolio</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <h1>My GitHub Repositories</h1>
+  <!-- Your GitHub repositories will be displayed here -->
 </body>
+<script>
+    fetch('https://api.github.com/users/chandrima0503/repos')
+      .then(response => response.json())
+      .then(data => {
+        const repoList = document.createElement('ul');
+        data.forEach(repo => {
+          const repoItem = document.createElement('li');
+          repoItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
+          repoList.appendChild(repoItem);
+        });
+        document.body.appendChild(repoList);
+      })
+      .catch(error => console.error('Error fetching GitHub repositories', error));
+  </script>
+  
 </html>
