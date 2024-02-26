@@ -61,7 +61,11 @@
         repoLink.href = repo.html_url;
         repoLink.textContent = repo.name;
 
+        const repoLanguage = document.createElement('p');
+        repoLanguage.textContent = `Language: ${repo.language}`;
+
         repoCard.appendChild(repoLink);
+        repoCard.appendChild(repoLanguage);
         repoContainer.appendChild(repoCard);
       });
     }
