@@ -1,18 +1,12 @@
-@media only screen and (max-width: 600px) {
-    /* Styles for screens with a maximum width of 600 pixels (typical smartphones) */
-    body {
-      font-size: 14px; /* Adjust font size for smaller screens */
-    }
-  
-    /* Add more specific styles as needed for smaller screens */
-  }
+/* Base Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #eae4fa;
+  overflow-x: hidden;
 }
-
+/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -27,6 +21,13 @@ body {
   margin-left: 1rem;
 }
 
+.button-container a {
+  text-align: center;
+  display: block;
+  margin-right: -2px;
+  font-size: 0.8rem;
+}
+
 .navbar a:hover {
   color: #570303;
 }
@@ -35,44 +36,53 @@ body {
   font-size: 1.5rem;
 }
 
-.logo-container {
-    margin-right: 1rem; /* Adjust spacing between logo and navigation items */
-  }
-  
-  .logo {
-    width: 80px; /* Adjust the width of your logo */
-    height: auto;
-  }
-  
-section {
-  max-width: 80%;
-  margin: 2em auto;
-  padding: 1em;
-  
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  color: #333;
-}
-
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
+.navbar ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 li {
   margin-bottom: 0.5em;
 }
 
+.navbar li {
+  margin-left: 1rem;
+}
+
+.logo-container {
+  margin-right: 1rem;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+/* Section Styles */
+section {
+  max-width: 80%;
+  margin: 2em auto;
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 img {
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
   border-start-end-radius: 50%;
   border-start-start-radius: 50%;
 }
 
+/* Project Card Styles */
 .project-card {
   width: 45%;
   margin: 1em;
@@ -91,14 +101,7 @@ img {
   border-radius: 8px;
 }
 
-.navbar ul {
-  display: flex;
-  align-items: center;
-}
-
-.navbar li {
-  margin-left: 1rem;
-}
+/* Icon Item Styles */
 .icon-item {
   display: flex;
   flex-direction: column;
@@ -111,193 +114,329 @@ img {
   text-transform: uppercase;
   margin-top: 0.5rem;
 }
-/* Existing CSS code */
 
-.icon-item {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.icon-item span {
-color: black;
-font-size: 0.8rem;
-text-transform: uppercase;
-margin-top: 0.5rem;
-}
-
-.navbar ul {
-display: flex;
-align-items: center;
-margin: 0;
-padding: 0;
-list-style-type: none;
-height: 100%; /* Add this line to make the navbar height match the header height */
-}
-
-.navbar li {
-margin-left: 1rem;
-}
+/* Footer Styles */
 footer {
-    background-color: #e6e1f7;
-    color: #0b0a0a;
-    padding: 2rem;
-    text-align: center;
-    }
+  background-color: #e6e1f7;
+  color: #0b0a0a;
+  padding: 2rem;
+  text-align: center;
+}
 
 .footer-content {
-max-width: 10000px;
-margin: 0 auto;
+  max-width: 10000px;
+  margin: 0 auto;
 }
 
-.footer-content p {
-color: #fff;
-margin-bottom: 1rem;
+h2 {
+  color: #333;
 }
 
+.footer-content p,
 .footer-content h2 {
-color: #fff;
-margin-top: 1rem;
-margin-bottom: 1rem;
+  color: #fff;
+  margin: 1rem 0;
 }
 
 .contact-details {
-list-style: none;
-padding: 0;
-display: inline-block;
+  list-style: none;
+  padding: 0;
+  display: inline-block;
 }
 
 .contact-details li {
-margin-bottom: 0.5rem;
-}
-
-.copyright {
-margin-top: 2rem;
-color: #0b0a0a;
+  margin-bottom: 0.5rem;
 }
 
 .columns {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .column {
-flex: 1;
+  flex: 1;
 }
 
 .column li {
-margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .social-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Button Styles */
+.hire-button,
+.download-button,
+.github-button,
+.source-code-button {
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .hire-button {
-    background-color: blue;
-    border: 5px solid rgb(72, 118, 246);
-    color: white;
-    border-radius: 15px;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none; 
-    transition: background-color 0.3s ease;
-  }
-  
-  .hire-button:hover {
-    background-color: darkblue;
-  }
-  
-  .download-button {
-    background-color: green;
-    color: white;
-    border: 5px solid rgb(123, 194, 123);
-    border-radius: 15px;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none; 
-    transition: background-color 0.3s ease;
-  }
-  
-  .download-button:hover {
-    background-color: darkgreen;
+  background-color: blue;
+  border: 5px solid rgb(72, 118, 246);
+  color: white;
+}
+
+.hire-button:hover {
+  background-color: darkblue;
+}
+
+.download-button {
+  background-color: green;
+  color: white;
+  border: 5px solid rgb(123, 194, 123);
+}
+
+.download-button:hover {
+  background-color: darkgreen;
+}
+
+.github-button {
+  background-color: rgba(45, 125, 222, 0.943);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.5rem;
+}
+
+.github-button:hover {
+  background-color: darkblue;
+}
+
+.source-code-button {
+  background-color: rgb(35, 152, 6);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.5rem;
+}
+
+.source-code-button:hover {
+  background-color: rgb(9, 56, 9);
+}
+
+
+
+.button-container a:last-child {
+  margin-right: 0;
+}
+
+/* Project Image Container */
+.project-image-container {
+  border: 2px solid #000;
+  padding: 10px;
+  display: inline-block;
+}
+
+.project-image-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Tech Stack Button Container */
+.tech-stack-button-container {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.tech-stack-button-container h4 {
+  margin-bottom: 10px;
+}
+
+.tech-stack-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 10px;
   }
 
-  .github-button {
-    background-color: rgba(45, 125, 222, 0.943);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    padding: 0.5rem 0.5rem; /* Increase the padding */
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .github-button:hover {
-    background-color: darkblue;
+  .navbar {
+    padding: 0.5rem;
   }
 
-  .source-code-button {
-    background-color: rgb(35, 152, 6);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    padding: 0.5rem 0.5rem; /* Increase the padding */
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .source-code-button:hover {
-    background-color: rgb(9, 56, 9);
-  }
-  
-  .button-container a {
-    text-align: center;
-    display: block;
-    margin-right: -2px;
-    font-size: 0.8rem;
-  }
-  
-  .button-container a:last-child {
-    margin-right: 0;
+  .navbar a {
+    margin-left: 0.5rem;
   }
 
-  .project-image-container {
-    border: 2px solid #000; /* You can customize the border color and thickness */
-    padding: 10px; /* You can adjust the padding as needed */
-    display: inline-block; /* Ensures the container only takes the necessary width */
-  }
-  .project-image-container img {
-    width: 100%; /* Make sure the image takes up the entire width of its container */
-    height: 400px; /* Set a fixed height for all images */
-    object-fit: cover; /* Ensure the image covers the entire container, maintaining aspect ratio */
+  .navbar i {
+    font-size: 0.5rem;
   }
 
-  .tech-stack-button-container {
-    background-color: white; /* Set the background color to light grey */
-    padding: 10px;
-    border-radius: 5px; /* Add rounded corners for a better appearance */
+  .logo-container {
+    margin-right: 0.5rem;
   }
 
-  .tech-stack-button-container h4 {
-    margin-bottom: 10px;
+  .logo {
+    width: 40px;
   }
 
-  .tech-stack-button {
-    display: inline-block;
-    padding: 8px 16px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #333; /* Set the text color to a dark color */
-    background-color: lightgrey; /* Set the button background color to white */
-    border: 1px solid lightgrey; /* Add a border to create the tab-like structure */
-    border-radius: 4px; /* Add rounded corners for a better appearance */
+  section {
+    max-width: 100%;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
+
+  .icon-item span {
+    font-size: 0.4rem;
+  }
+
+  img {
+    max-width: 20%;
+    border-start-end-radius: 20%;
+    border-start-start-radius: 20%;
+  }
+
+  .project-card {
+    width: 100%;
+    margin: 1em 0;
+    padding: 1em;
+  }
+
+  .project-card img {
+    border-radius: 8px;
+  }
+
+  .project-card .button-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .project-card .button-container a {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+
+.container {
+  max-width: 90%;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Creates space between the two sections */
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+  flex: 1; /* Each section takes equal width */
+  margin-right: 20px; /* Adds some space between sections */
+}
+
+.job {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.job-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.job-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-info i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.job-info span {
+  font-weight: bold;
+}
+
+.job-description {
+  margin-bottom: 10px;
+}
+
+.full-time {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  margin-right: 10px;
+}
+.part-time {
+  background-color: #c78041;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  margin-right: 10px;
+}
+
+.education {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.education-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.education-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.education-info i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.education-info span {
+  font-weight: bold;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+  }
+
+  .section {
+    margin-right: 0; /* Remove margin between sections */
+    margin-bottom: 20px; /* Add some space between sections */
+  }
+}
