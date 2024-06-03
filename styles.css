@@ -75,8 +75,9 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-img {
-  max-width: 40%;
+#name_img{
+  float:right;
+  max-width: 20%;
   height: auto;
   border-start-end-radius: 50%;
   border-start-start-radius: 50%;
@@ -172,7 +173,7 @@ h2 {
 .github-button,
 .source-code-button {
   border-radius: 15px;
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 0.5rem;
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
@@ -290,7 +291,6 @@ h2 {
   }
 
   section {
-    max-width: 100%;
     margin: 0.5em auto;
     padding: 0.5em;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -300,10 +300,9 @@ h2 {
     font-size: 0.4rem;
   }
 
-  img {
-    max-width: 20%;
-    border-start-end-radius: 20%;
-    border-start-start-radius: 20%;
+  .social-icon, .logo{
+    width: 20%;
+    height:auto;
   }
 
   .project-card {
